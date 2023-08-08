@@ -37,9 +37,9 @@ public class ShopPage {
 	}
 	
 
-	public void filterByIndex(String value) {
+	public void filterByIndex(int index) {
 		WebElement element = driver.findElement(orderDropDown);
 		Select dropdown = new Select(element);
-		dropdown.selectByIndex(3);
+		dropdown.selectByIndex(index);
 	}
 }
