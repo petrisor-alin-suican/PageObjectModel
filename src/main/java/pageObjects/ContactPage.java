@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class ContactPage {
 	
@@ -18,6 +19,9 @@ public class ContactPage {
 	public By messageField = By.cssSelector("textarea[name='your-message']");
 	public By sendMessageButton = By.cssSelector("input[value='Send Message']");
 	public By confirmationMessage = By.cssSelector("div[class*='wpcf7-response-output']");
+	public By zoomIn = By.cssSelector("button[title='Zoom in']");
+	public By zoomOut = By.cssSelector("button[title='Zoom out']");
+	public By losAngelesMapFrame = By.xpath("//iframe[contains(@src, 'Los+Angeles')]");
 	
 
 	public void sendMessage(String name, String email, String message) {
@@ -33,4 +37,12 @@ public class ContactPage {
 		return driver.findElement(locator).isDisplayed();
 		
 	}
+    
+    
+    public void zoomMap(By locator) {
+   // 	WebElement mapFrame.driver.findElement(losAngelesMapFrame);
+   // 	driver.switchTo().frame(mapFrame);
+    	driver.switchTo().frame(driver.findElement(losAngelesMapFrame));
+    	driver.findElement(locator).click();
+    }
 }
