@@ -3,7 +3,9 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+import utils.SeleniumWrappers;
+
+public class LoginPage extends SeleniumWrappers {
 	
 	public WebDriver driver;
 	
@@ -22,16 +24,21 @@ public class LoginPage {
 	
 	//metode
 	public void loginInApp(String user, String pass) {
-		driver.findElement(usernameField).clear();
+		/*driver.findElement(usernameField).clear();
 		driver.findElement(usernameField).sendKeys(user);
 		driver.findElement(passwordField).clear();
 		driver.findElement(passwordField).sendKeys(pass);
-		driver.findElement(submit_Button).click();
+		driver.findElement(submit_Button).click();*/
+		
+		sendKeys(usernameField, user);
+		sendKeys(passwordField, pass);
+		click(submit_Button);
 		
 	}
 	
 	public void closePopUp() {
-		driver.findElement(closeloginPopup).click();
+		//driver.findElement(closeloginPopup).click();
+		click(closeloginPopup);
 	}
 	
 	public boolean loginMsgIsDisplayed(By locator) {
