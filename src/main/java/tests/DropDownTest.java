@@ -13,7 +13,7 @@ import utils.BaseTest;
 
 public class DropDownTest extends BaseTest{
 	
-	@Test(priority=1)
+	@Test(priority=1, groups = "ProductFunctionality")
 	public void selectByValueTest() {
 		
 		MenuPage menu = new MenuPage(driver);
@@ -27,7 +27,7 @@ public class DropDownTest extends BaseTest{
 		
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 2, groups = "ProductFunctionality")
 	public void selectByVisibleTextTest() {
 		
 		MenuPage menu = new MenuPage(driver);

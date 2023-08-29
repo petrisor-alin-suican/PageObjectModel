@@ -12,7 +12,7 @@ public class BaseTest {
 	public static WebDriver driver;
 	public BasePage app;
 	
-	@BeforeClass                   
+	@BeforeClass(alwaysRun = true)                   
 	public void setup() {
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\suicpet\\eclipse-workspace\\MavenExample\\src\\main\\java\\webdriver\\chromedriver\\windows\\chromedriver.exe");
