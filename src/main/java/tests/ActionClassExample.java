@@ -25,7 +25,7 @@ public class ActionClassExample extends BaseTest {
 		Thread.sleep(3000);
 		menu.hoverElement(menu.blogSubMenuMasonry);
 		Thread.sleep(3000);
-		menu.navigateTo(menu.blogSubMenuMasonrySubMenu);
+		//menu.navigateTo(menu.blogSubMenuMasonrySubMenu);
 	}
 	
 	//@Test

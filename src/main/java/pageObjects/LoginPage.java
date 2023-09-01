@@ -21,6 +21,7 @@ public class LoginPage extends SeleniumWrappers {
 	public By loginSuccessMsg = By.cssSelector("div[class*='sc_infobox_style_success']");
 	public By loginErrorMsg = By.cssSelector("div[class*='sc_infobox_style_error']");
 	public By closeloginPopup = By.cssSelector("a[class='popup_close']");
+	public By logoutButton = By.linkText("Logout");
 	
 	//metode
 	public void loginInApp(String user, String pass) {
@@ -45,6 +46,10 @@ public class LoginPage extends SeleniumWrappers {
 		
 		return driver.findElement(locator).isDisplayed();
 		
+	}
+	
+	public void logoutFromApp() {
+		driver.findElement(logoutButton).click();
 	}
 
 }
